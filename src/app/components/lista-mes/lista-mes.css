@@ -1,0 +1,104 @@
+.lista-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lista-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lista-header h2 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.filtros {
+  display: flex;
+  gap: 8px;
+}
+
+.filtros select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #4472C4;
+  background-color: #16213e;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.legenda {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.legenda-cor {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #555;
+}
+
+.lista-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-conta {
+  background-color: #16213e;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #555;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card-conta:hover {
+  background-color: #1e2d50;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-nome {
+  color: #e0e0e0;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.card-valor {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #1a1a2e;
+}

@@ -1,0 +1,92 @@
+.matriz-container {
+  padding: 20px;
+}
+
+.matriz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.matriz-header h2 {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.matriz-header select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #4472C4;
+  background-color: #16213e;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.legenda {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.legenda-cor {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #555;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #2a3a5e;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #4472C4;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.conta-nome {
+  text-align: left;
+  font-weight: bold;
+  background-color: #16213e;
+  color: #e0e0e0;
+  white-space: nowrap;
+}
+
+.conta-valor {
+  background-color: #16213e;
+  color: #aaa;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.celula-status {
+  width: 55px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.celula-status:hover {
+  opacity: 0.7;
+}

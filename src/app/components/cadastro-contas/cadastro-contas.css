@@ -1,0 +1,138 @@
+.cadastro-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.form-conta {
+  background-color: #16213e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #4472C4;
+  background-color: #1a1a2e;
+  color: #fff;
+  font-size: 14px;
+  width: 200px;
+}
+
+.form-check label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background-color: #4472C4;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #555;
+  color: white;
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.btn-edit {
+  background-color: #f0ad4e;
+  color: #1a1a2e;
+}
+
+.btn-delete {
+  background-color: #d9534f;
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #2a3a5e;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #4472C4;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  color: #e0e0e0;
+  background-color: #16213e;
+}
+
+.acoes {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.badge.ativa {
+  background-color: #00FF00;
+  color: #1a1a2e;
+}
+
+.badge.inativa {
+  background-color: #CCCCCC;
+  color: #1a1a2e;
+}

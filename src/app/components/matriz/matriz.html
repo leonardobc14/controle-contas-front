@@ -1,0 +1,48 @@
+<div class="matriz-container">
+  <div class="matriz-header">
+    <h2>Controle de Pagamentos</h2>
+    <select [(ngModel)]="anoAtual" (change)="mudarAno()">
+      @for (ano of anos; track ano) {
+        <option [value]="ano">{{ ano }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="legenda">
+    @for (status of statusList; track status.id) {
+      <span class="legenda-item">
+        <span class="legenda-cor" [style.backgroundColor]="status.cor"></span>
+        {{ status.nome }}
+      </span>
+    }
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Conta</th>
+        <th>Valor Médio</th>
+        @for (mes of meses; track mes) {
+          <th>{{ mes }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (conta of contas; track conta.id) {
+        <tr>
+          <td class="conta-nome">{{ conta.nome }}</td>
+          <td class="conta-valor">{{ conta.valorMedio | currency:'BRL' }}</td>
+          @for (mes of meses; track mes; let i = $index) {
+            <td
+              class="celula-status"
+              [style.backgroundColor]="getStatus(conta.id, i + 1)?.cor || '#FFFFFF'"
+              (click)="alterarStatus(conta.id, i + 1)"
+              [title]="getStatus(conta.id, i + 1)?.nome || 'Sem status'"
+            >
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

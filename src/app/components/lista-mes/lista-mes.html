@@ -1,0 +1,49 @@
+<div class="lista-container">
+  <div class="lista-header">
+    <h2>Pagamentos por Mês</h2>
+    <div class="filtros">
+      <select [(ngModel)]="mesAtual" (change)="mudarFiltro()">
+        @for (mes of meses; track mes.valor) {
+          <option [value]="mes.valor">{{ mes.nome }}</option>
+        }
+      </select>
+      <select [(ngModel)]="anoAtual" (change)="mudarFiltro()">
+        @for (ano of anos; track ano) {
+          <option [value]="ano">{{ ano }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <div class="legenda">
+    @for (status of statusList; track status.id) {
+      <span class="legenda-item">
+        <span class="legenda-cor" [style.backgroundColor]="status.cor"></span>
+        {{ status.nome }}
+      </span>
+    }
+  </div>
+
+  <div class="lista-cards">
+    @for (conta of contas; track conta.id) {
+      <div
+        class="card-conta"
+        [style.borderLeftColor]="getStatus(conta.id)?.cor || '#555'"
+        (click)="alterarStatus(conta.id)"
+      >
+        <div class="card-info">
+          <span class="card-nome">{{ conta.nome }}</span>
+          <span class="card-valor">{{ conta.valorMedio | currency:'BRL' }}</span>
+        </div>
+        <div class="card-status">
+          <span
+            class="status-badge"
+            [style.backgroundColor]="getStatus(conta.id)?.cor || '#555'"
+          >
+            {{ getStatus(conta.id)?.nome || 'Sem status' }}
+          </span>
+        </div>
+      </div>
+    }
+  </div>
+</div>

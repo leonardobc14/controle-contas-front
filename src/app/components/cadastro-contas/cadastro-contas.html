@@ -1,0 +1,59 @@
+<div class="cadastro-container">
+  <h2>Cadastro de Contas</h2>
+
+  <form class="form-conta" (ngSubmit)="salvar()">
+    <div class="form-group">
+      <label for="nome">Nome da Conta</label>
+      <input id="nome" type="text" [(ngModel)]="novaConta.nome" name="nome" placeholder="Ex: Energia, Internet..." required>
+    </div>
+
+    <div class="form-group">
+      <label for="valor">Valor Médio (R$)</label>
+      <input id="valor" type="number" [(ngModel)]="novaConta.valorMedio" name="valorMedio" step="0.01" min="0">
+    </div>
+
+    <div class="form-group form-check">
+      <label>
+        <input type="checkbox" [(ngModel)]="novaConta.ativo" name="ativo">
+        Ativa
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">
+        {{ editando ? 'Atualizar' : 'Adicionar' }}
+      </button>
+      @if (editando) {
+        <button type="button" class="btn btn-secondary" (click)="cancelarEdicao()">Cancelar</button>
+      }
+    </div>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor Médio</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (conta of contas; track conta.id) {
+        <tr>
+          <td>{{ conta.nome }}</td>
+          <td>{{ conta.valorMedio | currency:'BRL' }}</td>
+          <td>
+            <span [class]="conta.ativo ? 'badge ativa' : 'badge inativa'">
+              {{ conta.ativo ? 'Ativa' : 'Inativa' }}
+            </span>
+          </td>
+          <td class="acoes">
+            <button class="btn btn-sm btn-edit" (click)="editar(conta)">Editar</button>
+            <button class="btn btn-sm btn-delete" (click)="excluir(conta.id)">Excluir</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

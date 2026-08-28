@@ -1,0 +1,44 @@
+<div class="orcamento-container">
+  <h2>Orçamento</h2>
+
+  <div class="orcamento-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ano">Ano</label>
+        <select id="ano" [(ngModel)]="anoAtual" (change)="mudarAno()">
+          @for (ano of anos; track ano) {
+            <option [value]="ano">{{ ano }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="salario">Salário Mensal (R$)</label>
+        <input id="salario" type="number" [(ngModel)]="salario" step="0.01" min="0">
+      </div>
+
+      <button class="btn btn-primary" (click)="salvarOrcamento()" [disabled]="salvando">
+        {{ salvando ? 'Salvando...' : 'Salvar' }}
+      </button>
+    </div>
+  </div>
+
+  @if (saldo) {
+    <div class="resumo">
+      <div class="card">
+        <span class="card-label">Salário</span>
+        <span class="card-valor positivo">{{ saldo.salario | currency:'BRL' }}</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Total Contas</span>
+        <span class="card-valor negativo">{{ saldo.totalContas | currency:'BRL' }}</span>
+      </div>
+      <div class="card destaque">
+        <span class="card-label">Saldo</span>
+        <span class="card-valor" [class]="saldo.saldo >= 0 ? 'positivo' : 'negativo'">
+          {{ saldo.saldo | currency:'BRL' }}
+        </span>
+      </div>
+    </div>
+  }
+</div>
